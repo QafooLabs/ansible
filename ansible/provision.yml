@@ -1,5 +1,5 @@
 ---
-- name: Provision Basic setup
+- name: Provision Basic Setup
   hosts: base
   become: yes
   tasks:
