@@ -1,0 +1,4 @@
+test.vm ansible_host=33.33.33.15 ansible_user=vagrant
+
+[base]
+test.vm
