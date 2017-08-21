@@ -19,11 +19,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
         ansible.playbook = "ansible/provision.yml"
         ansible.verbose = false
         ansible.limit = "all"
-
-        if ENV['ANSIBLE_TAGS'] != nil
-            puts "Setting ansible.tags=#{ENV['ANSIBLE_TAGS']}"
-            ansible.tags = "#{ENV['ANSIBLE_TAGS']}"
-        end
     end
 
     config.vm.network :forwarded_port, guest: 22, host: 22022, id: "ssh"
