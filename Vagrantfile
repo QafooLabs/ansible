@@ -4,7 +4,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     config.vm.hostname = "test.vm"
     config.vm.network :private_network, ip: "33.33.33.15"
 
-    config.vm.box = "ubuntu/trusty64"
+    config.vm.box = "bento/ubuntu-16.04"
+    # config.vm.box = "ubuntu/trusty64"
 
     config.vm.provider :virtualbox do |vb|
         vb.customize ["modifyvm", :id, "--cpus", `#{RbConfig::CONFIG['host_os'] =~ /darwin/ ? 'sysctl -n hw.ncpu' : 'nproc'}`.chomp]
